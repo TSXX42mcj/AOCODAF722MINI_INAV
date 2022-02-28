@@ -1,0 +1,273 @@
+# 
+
+# diff all
+###WARNING: NO CUSTOM DEFAULTS FOUND###
+
+# version
+# Betaflight / STM32F7X2 (S7X2) 4.2.11 Nov  9 2021 / 20:29:32 (948ba6339) MSP API: 1.43
+###ERROR: diff: NO CONFIG FOUND###
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name OMNIBUSF4SD
+manufacturer_id SJET
+mcu_id 0003001d3756501120383558
+signature 
+
+# resources
+resource BEEPER 1 C13
+resource MOTOR 1 B04
+resource MOTOR 2 B05
+resource MOTOR 3 B00
+resource MOTOR 4 B01
+resource SERVO 1 A15
+resource SERVO 2 B07
+resource PPM 1 A10
+resource LED_STRIP 1 A08
+resource SERIAL_TX 1 A09
+resource SERIAL_TX 2 A02
+resource SERIAL_TX 3 B10
+resource SERIAL_TX 4 A00
+resource SERIAL_TX 6 C06
+resource SERIAL_TX 11 C07
+resource SERIAL_RX 1 A10
+resource SERIAL_RX 2 A03
+resource SERIAL_RX 3 B11
+resource SERIAL_RX 4 A01
+resource SERIAL_RX 6 C07
+resource I2C_SCL 1 B08
+resource I2C_SDA 1 B09
+resource LED 1 A13
+resource SPI_SCK 1 A05
+resource SPI_SCK 2 B13
+resource SPI_SCK 3 C10
+resource SPI_MISO 1 A06
+resource SPI_MISO 2 B14
+resource SPI_MISO 3 C11
+resource SPI_MOSI 1 A07
+resource SPI_MOSI 2 B15
+resource SPI_MOSI 3 C12
+resource CAMERA_CONTROL 1 A00
+resource ADC_BATT 1 C02
+resource ADC_RSSI 1 C00
+resource ADC_CURR 1 C01
+resource PINIO 1 B03
+resource PINIO 2 A08
+resource FLASH_CS 1 D02
+resource OSD_CS 1 B12
+resource GYRO_EXTI 1 C04
+resource GYRO_CS 1 B02
+resource USB_DETECT 1 C14
+
+# timer
+timer A10 AF1
+# pin A10: TIM1 CH3 (AF1)
+timer B04 AF2
+# pin B04: TIM3 CH1 (AF2)
+timer B05 AF2
+# pin B05: TIM3 CH2 (AF2)
+timer B00 AF2
+# pin B00: TIM3 CH3 (AF2)
+timer B01 AF2
+# pin B01: TIM3 CH4 (AF2)
+timer B06 AF2
+# pin B06: TIM4 CH1 (AF2)
+timer B03 AF1
+# pin B03: TIM2 CH2 (AF1)
+timer A15 AF1
+# pin A15: TIM2 CH1 (AF1)
+timer B07 AF2
+# pin B07: TIM4 CH2 (AF2)
+timer A08 AF1
+# pin A08: TIM1 CH1 (AF1)
+
+# dma
+dma ADC 1 0
+# ADC 1: DMA2 Stream 0 Channel 0
+dma pin A10 0
+# pin A10: DMA2 Stream 6 Channel 0
+dma pin B04 0
+# pin B04: DMA1 Stream 4 Channel 5
+dma pin B05 0
+# pin B05: DMA1 Stream 5 Channel 5
+dma pin B00 0
+# pin B00: DMA1 Stream 7 Channel 5
+dma pin B01 0
+# pin B01: DMA1 Stream 2 Channel 5
+dma pin B06 0
+# pin B06: DMA1 Stream 0 Channel 2
+dma pin B03 0
+# pin B03: DMA1 Stream 6 Channel 3
+dma pin A15 0
+# pin A15: DMA1 Stream 5 Channel 3
+dma pin B07 0
+# pin B07: DMA1 Stream 3 Channel 2
+dma pin A08 2
+# pin A08: DMA2 Stream 3 Channel 6
+
+# servo
+servo 0 1000 2000 2000 100 5
+servo 1 1000 2000 2000 100 -1
+
+# feature
+feature -RX_PARALLEL_PWM
+feature RX_SERIAL
+feature SERVO_TILT
+feature GPS
+feature LED_STRIP
+feature OSD
+feature CHANNEL_FORWARDING
+
+# beeper
+beeper -GYRO_CALIBRATED
+beeper -RX_LOST
+beeper -ARMING_GPS_FIX
+beeper -BAT_CRIT_LOW
+beeper -GPS_STATUS
+beeper -RX_SET
+beeper -ACC_CALIBRATION
+beeper -ACC_CALIBRATION_FAIL
+beeper -DISARM_REPEAT
+beeper -ARMED
+beeper -BLACKBOX_ERASE
+beeper -CRASH_FLIP
+
+# serial
+serial 0 1 115200 57600 0 115200
+serial 2 2 115200 115200 0 115200
+serial 3 8192 115200 57600 0 57600
+serial 5 64 115200 57600 0 115200
+
+# aux
+aux 0 0 0 1950 2050 0 0
+aux 1 1 3 1975 2025 0 0
+aux 2 1 3 1575 1625 0 0
+aux 3 2 3 1475 1525 0 0
+aux 4 2 3 1875 1925 0 0
+aux 5 6 3 1375 1625 0 0
+aux 6 27 3 1075 1125 0 0
+aux 7 7 2 1950 2050 0 0
+aux 8 13 2 950 1050 0 0
+aux 9 19 3 1175 1225 0 0
+aux 10 40 4 1950 2050 0 0
+aux 11 41 5 1950 2050 0 0
+aux 12 47 3 1375 1425 0 0
+aux 13 47 0 1775 1825 0 0
+
+# vtxtable
+vtxtable bands 5
+vtxtable channels 8
+vtxtable band 1 A        A CUSTOM  5865 5845 5825 5805 5785 5765 5745 5725
+vtxtable band 2 B        B CUSTOM  5733 5752 5771 5790 5809 5828 5847 5868
+vtxtable band 3 E        E CUSTOM  5705 5685 5665 5665 5885 5805 5805 5805
+vtxtable band 4 F        F CUSTOM  5740 5760 5780 5800 5820 5840 5860 5880
+vtxtable band 5 R        R CUSTOM  5658 5695 5732 5769 5806 5843 5880 5917
+vtxtable powerlevels 5
+vtxtable powervalues 25 100 200 400 600
+vtxtable powerlabels 0 1 2 4 6
+
+# master
+set acc_calibration = -11,165,-305,1
+set mag_bustype = I2C
+set mag_i2c_device = 1
+set mag_hardware = NONE
+set baro_bustype = I2C
+set baro_i2c_device = 1
+set min_check = 1005
+set max_check = 1995
+set rssi_channel = 14
+set serialrx_provider = IBUS
+set blackbox_p_ratio = 16
+set blackbox_device = SPIFLASH
+set dshot_idle_value = 500
+set dshot_burst = ON
+set motor_pwm_protocol = DSHOT600
+set failsafe_delay = 10
+set failsafe_throttle = 1200
+set failsafe_switch_mode = STAGE2
+set failsafe_procedure = GPS-RESCUE
+set bat_capacity = 3000
+set vbat_min_cell_voltage = 290
+set vbat_warning_cell_voltage = 360
+set current_meter = NONE
+set battery_meter = ADC
+set beeper_inversion = ON
+set beeper_od = OFF
+set gps_provider = UBLOX
+set gps_sbas_mode = AUTO
+set gps_rescue_angle = 30
+set gps_rescue_ground_speed = 1000
+set gps_rescue_throttle_hover = 1300
+set gps_rescue_min_sats = 6
+set gps_rescue_allow_arming_without_fix = ON
+set osd_warn_visual_beeper = OFF
+set osd_warn_gps_rescue_disabled = OFF
+set osd_vbat_pos = 2112
+set osd_rssi_pos = 2176
+set osd_tim_2_pos = 2080
+set osd_flymode_pos = 2413
+set osd_throttle_pos = 2240
+set osd_vtx_channel_pos = 2144
+set osd_crosshairs_pos = 2253
+set osd_ah_sbar_pos = 2254
+set osd_ah_pos = 2126
+set osd_gps_speed_pos = 357
+set osd_gps_lon_pos = 2432
+set osd_gps_lat_pos = 2449
+set osd_gps_sats_pos = 2400
+set osd_flight_dist_pos = 2406
+set osd_compass_bar_pos = 2058
+set osd_altitude_pos = 2103
+set osd_warnings_pos = 42
+set osd_pit_ang_pos = 2169
+set osd_rol_ang_pos = 2137
+set osd_nheading_pos = 2093
+set osd_stat_battery = ON
+set osd_stat_max_alt = ON
+set osd_stat_bbox = OFF
+set osd_stat_bb_no = OFF
+set osd_stat_max_g_force = ON
+set vtx_band = 2
+set vtx_channel = 2
+set vtx_power = 5
+set vtx_low_power_disarm = ON
+set vtx_freq = 5752
+set vcd_video_system = NTSC
+set max7456_spi_bus = 2
+set camera_control_key_delay = 150
+set camera_control_internal_resistance = 170
+set pinio_box = 40,41,255,255
+set flash_spi_bus = 3
+set gyro_1_bustype = SPI
+set gyro_1_spibus = 1
+
+profile 0
+
+profile 1
+
+profile 2
+
+# restore original profile selection
+profile 0
+
+rateprofile 0
+
+rateprofile 1
+
+rateprofile 2
+
+rateprofile 3
+
+rateprofile 4
+
+rateprofile 5
+
+# restore original rateprofile selection
+rateprofile 0
+
+# save configuration
+save
+# 
