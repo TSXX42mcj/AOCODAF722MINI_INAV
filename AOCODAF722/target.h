@@ -18,13 +18,8 @@
 
 #pragma once
 
-#if (defined(AOCODAF722MINI))
-#   define TARGET_BOARD_IDENTIFIER "AO7A"
-#   define USBD_PRODUCT_STRING  "AocodaF722Mini"
-#else
-#   define TARGET_BOARD_IDENTIFIER "AO7C"
-#   define USBD_PRODUCT_STRING  "AocodaF722Mini_8Motor"
-#endif
+#define TARGET_BOARD_IDENTIFIER "AO7A"
+#define USBD_PRODUCT_STRING  "AocodaF722Mini"
 
 #define LED1                    PA13  
 
@@ -37,8 +32,7 @@
 #define I2C1_SCL                PB8
 #define I2C1_SDA                PB9
 
-
-#define USE_TARGET_IMU_HARDWARE_DESCRIPTORS
+//#define USE_TARGET_IMU_HARDWARE_DESCRIPTORS
 #define USE_SPI
 #define USE_SPI_DEVICE_1
 #define SPI1_SCK_PIN            PA5
@@ -70,12 +64,12 @@
 #define USE_MAG_MAG3110
 #define USE_MAG_LIS3MDL
 
-#define TEMPERATURE_I2C_BUS     BUS_I2C1
-
-#define PITOT_I2C_BUS           BUS_I2C1
-
 #define USE_RANGEFINDER
+#define USE_OPFLOW
 #define RANGEFINDER_I2C_BUS     BUS_I2C1
+#define TEMPERATURE_I2C_BUS     BUS_I2C1
+#define PITOT_I2C_BUS           BUS_I2C1
+#define BNO055_I2C_BUS          BUS_I2C1
 
 // *************** SPI2 OSD ***********************
 #define USE_SPI_DEVICE_2
@@ -141,18 +135,12 @@
 
 #define ADC_CHANNEL_1_PIN           PC2
 #define ADC_CHANNEL_2_PIN           PC1
+#define ADC_CHANNEL_3_PIN           PC0
 
 #define VBAT_ADC_CHANNEL            ADC_CHN_1
 #define CURRENT_METER_ADC_CHANNEL   ADC_CHN_2
+#define RSSI_ADC_CHANNEL   ADC_CHN_3
 
-// *************** PINIO ***************************
-#define USE_PINIO
-#define USE_PINIOBOX
-
-#if (defined(AOCODAF722MINI))
-#   define PINIO1_PIN               PB6 // M5 
-#   define PINIO2_PIN               PB3 // M6
-#endif
 // *************** LEDSTRIP ************************
 #define USE_LED_STRIP
 #define WS2811_PIN                  PA8
@@ -162,14 +150,16 @@
 
 #define USE_SERIAL_4WAY_BLHELI_INTERFACE
 
+#define USE_PINIO
+#define USE_PINIOBOX
+#define PINIO1_PIN                  PA15 // USER 1
+#define PINIO2_PIN                  PB7  // USER 2
+
 #define TARGET_IO_PORTA 0xffff
 #define TARGET_IO_PORTB 0xffff
 #define TARGET_IO_PORTC 0xffff
 #define TARGET_IO_PORTD 0xffff
 
-#define MAX_PWM_OUTPUT_PORTS        8
+#define MAX_PWM_OUTPUT_PORTS        6
 #define USE_DSHOT
 #define USE_ESC_SENSOR
-
-#define BNO055_I2C_BUS          BUS_I2C1
-

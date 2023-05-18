@@ -1,2 +1,1 @@
-target_stm32f722xe(AOCODAF722MINI)
-target_stm32f722xe(AOCODAF722MINI_8MOTOR)
+target_stm32f722xe(F722)
